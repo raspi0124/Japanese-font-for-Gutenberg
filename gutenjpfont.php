@@ -24,6 +24,13 @@ function gutenjpfont_style() {
     wp_register_style( 'gutenjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
     wp_enqueue_style( 'gutenjpfont-styles' );
 }
+
+function gutenjpfont_enqueue_script()
+{   
+    wp_enqueue_script( 'gutenjpfont_script', plugin_dir_url( __FILE__ ) . 'addfont.js' );
+}
+add_action( 'wp_enqueue_scripts', 'gutenjpfont_script' );
+add_action('admin_enqueue_scripts', 'gutenjpfont_script');
 add_action( 'wp_enqueue_scripts', 'gutenjpfont_style' );
 add_action( 'admin_enqueue_scripts', 'gutenjpfont_style' );
 
