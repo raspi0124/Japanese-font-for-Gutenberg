@@ -8,8 +8,8 @@ function Heading( { nodeName = 'H2', children } ) {
 }
 
 wp.blocks.registerBlock( 'core/heading', {
-	title: 'Heading',
-	icon: 'heading',
+	title: 'Font',
+	icon: 'font',
 	category: 'common',
 
 	attributes: {
