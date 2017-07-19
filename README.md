@@ -5,4 +5,4 @@ Pull request are welcome!
 
 Gutenberg プラグインに日本語フォントを追加します。
 現在コーディング中。。
-プルリク歓迎です！
+プルリク大歓迎です！
