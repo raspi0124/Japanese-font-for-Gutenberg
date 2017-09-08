@@ -20,7 +20,7 @@ License: GPL2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 //load files plugin need.
-<?php
+
 
 function loadfont_gutenjpfont() {
 	wp_enqueue_script(
