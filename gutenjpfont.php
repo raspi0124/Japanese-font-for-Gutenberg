@@ -20,17 +20,13 @@ License: GPL2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 //load files plugin need.
-function gutenjpfont_style() {
-    wp_register_style( 'gutenjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
-    wp_enqueue_style( 'gutenjpfont-styles' );
-}
+<?php
 
-function gutenjpfont_enqueue_script()
-{   
-    wp_enqueue_script( 'gutenjpfont_script', plugin_dir_url( __FILE__ ) . 'addfont.js' );
+function loadfont_gutenjpfont() {
+	wp_enqueue_script(
+		'loadfont_gutenjpfont',
+		plugins_url( 'addfont.js', __FILE__ ),
+		array( 'wp-blocks', 'wp-element' )
+	);
 }
-add_action( 'wp_enqueue_scripts', 'gutenjpfont_script' );
-add_action('admin_enqueue_scripts', 'gutenjpfont_script');
-add_action( 'wp_enqueue_scripts', 'gutenjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'gutenjpfont_style' );
-
+add_action( 'enqueue_block_editor_assets', 'loadfont_gutenjpfont' );
