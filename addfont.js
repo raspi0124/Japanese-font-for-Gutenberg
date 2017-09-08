@@ -1,36 +1,19 @@
+const { registerBlockType } = wp.blocks;
+const blockStyle = { backgroundColor: '#900', color: '#fff', padding: '20px' };
 
-const Editable = wp.blocks.Editable;
-const { html, prop } = wp.blocks.query;
+registerBlockType( 'gutenberg-boilerplate-esnext/hello-world-step-01', {
+	title: 'Hello World (Step 1)',
 
-function Heading( { nodeName = 'H2', children } ) {
-	// nodeName.toLowerCase() is used to map DOM nodeName values to proper tag.
-	return wp.element.createElement( nodeName.toLowerCase(), null, children );
-}
+	icon: 'universal-access-alt',
 
-wp.blocks.registerBlock( 'core/heading', {
-	title: 'Font',
-	icon: 'font',
-	category: 'common',
+	category: 'layout',
 
-	attributes: {
-		value: html( 'h1,h2,h3,h4,h5,h6' ),
-		headingType: prop( 'h1,h2,h3,h4,h5,h6', 'nodeName' )
+	edit() {
+		return <p style={ blockStyle }>Hello editor.</p>;
 	},
 
-	edit( attributes, onChange ) {
-		const { headingType = 'H2', value } = attributes;
-
-		return (
-			<Heading nodeName={ headingType }>
-				<Editable
-					value={ value }
-					onChange={ ( nextValue ) => onChange( { value: nextValue } ) } />
-			</Heading>
-		);
+	save() {
+		return <p style={ blockStyle }>Hello saved content.</p>;
 	},
-
-	save( attributes ) {
-		const { headingType = 'H2', value } = attributes;
-		return <Heading nodeName={ headingType }>{ value }</Heading>;
-	}
 } );
+
