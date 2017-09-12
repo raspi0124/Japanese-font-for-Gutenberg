@@ -22,11 +22,11 @@ License: GPL2
 //load files plugin need.
 
 
-function loadfont_gutenjpfont() {
+function gutenberg_boilerplate_enqueue_block_editor_assets() {
 	wp_enqueue_script(
-		'loadfont_gutenjpfont',
+		'gutenberg-boilerplate-es5-step01',
 		plugins_url( 'addfont.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-element' )
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'loadfont_gutenjpfont' );
+add_action( 'enqueue_block_editor_assets', 'gutenberg_boilerplate_enqueue_block_editor_assets' );
