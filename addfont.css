@@ -7,3 +7,6 @@
         url(//fonts.gstatic.com/ea/notosansjapanese/v6/NotoSansJP-DemiLight.otf) format('opentype');
 }
 
+ .wp-block-gutenjpfont-noto {
+    font-family: Noto Sans Japanese;
+}
