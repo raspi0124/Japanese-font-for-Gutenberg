@@ -21,15 +21,15 @@ License: GPL2
 */
 //load files plugin need.
 
-function gutenberg_boilerplate_block() {
+function gutenjpfont_noto() {
     wp_register_script(
-        'gutenberg-boilerplate-es5-step03',
+        'gutenjpfont',
         plugins_url( 'addfont.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element' )
     );
 
-    register_block_type( 'gutenberg-boilerplate-es5/hello-world-step-03', array(
-        'editor_script' => 'gutenberg-boilerplate-es5-step03',
+    register_block_type( 'gutenjpfont/noto', array(
+        'editor_script' => 'gutenjpfont',
     ) );
 }
-add_action( 'init', 'gutenberg_boilerplate_block' );
+add_action( 'init', 'gutenjpfont_noto' );
