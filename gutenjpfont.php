@@ -2,7 +2,7 @@
 /*
 Plugin Name: Japanese font for Gutenberg
 Description: Add Japanese font to Gutenberg.Coding in progress!Pull request are very welcome!
-Version: alpha-1
+Version: 0.4
 Author: raspi0124
 Author URI: https://raspi-diary.com/
 License: GPL2
