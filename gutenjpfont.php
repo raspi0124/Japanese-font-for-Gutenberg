@@ -34,9 +34,17 @@ function gutenjpfont_noto() {
         filemtime( plugin_dir_path( __FILE__ ) . 'addfont.css' )
     );
 
+    wp_register_style(
+        'gutenjpfont_front_css',
+        plugins_url( 'addfont.css', __FILE__ ),
+        array(),
+        filemtime( plugin_dir_path( __FILE__ ) . 'addfont.css' )
+    );
+	
     register_block_type( 'gutenjpfont/noto', array(
         'editor_script' => 'gutenjpfont_js',
         'editor_style'  => 'gutenjpfont_css',
+	'style' => 'gutenjpfont_front_css',
     ) );
 }
 add_action( 'init', 'gutenjpfont_noto' );
