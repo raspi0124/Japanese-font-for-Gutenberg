@@ -19,7 +19,7 @@ License: GPL2
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-//load files plugin need.
+
 
 function gutenjpfont_noto() {
     wp_register_script(
@@ -27,16 +27,17 @@ function gutenjpfont_noto() {
         plugins_url( 'addfont.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element' )
     );
+    wp_register_style(
+        'gutenjpfont',
+        plugins_url( 'addfont.css', __FILE__ ),
+        array( 'wp-edit-blocks' ),
+        filemtime( plugin_dir_path( __FILE__ ) . 'addfont.css' )
+    );
 
     register_block_type( 'gutenjpfont/noto', array(
         'editor_script' => 'gutenjpfont',
+        'editor_style'  => 'gutenjpfont',
     ) );
 }
-add_action( 'init', 'gutenjpfont_noto' );
+add_action( 'init', 'gutenjpfont' );
 
-function gutenjpfont_style() {
-    wp_register_style( 'gutenjpfont-styles',  plugin_dir_url( __FILE__ ) . 'addfont.css' );
-    wp_enqueue_style( 'gutenjpfont-styles' );
-}
-add_action( 'wp_enqueue_scripts', 'gutenjpfont_style' );
-add_action( 'admin_enqueue_scripts', 'gutenjpfont_style' );
