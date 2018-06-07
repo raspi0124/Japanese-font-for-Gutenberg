@@ -28,8 +28,8 @@ function gutenberg_boilerplate_block() {
         array( 'wp-blocks', 'wp-element' )
     );
 
-    register_block_type( 'gutenberg-boilerplate-es5/hello-world-step-01', array(
-        'editor_script' => 'gutenberg-boilerplate-es5-step01',
+    register_block_type( 'gutenberg-boilerplate-es5/hello-world-step-03', array(
+        'editor_script' => 'gutenberg-boilerplate-es5-step03',
     ) );
 }
 add_action( 'init', 'gutenberg_boilerplate_block' );
