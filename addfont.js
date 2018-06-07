@@ -4,8 +4,8 @@ var el = wp.element.createElement,
     registerBlockType = wp.blocks.registerBlockType,
     RichText = wp.editor.RichText;
 
-registerBlockType( 'gutenberg-boilerplate-es5/hello-world-step-03', {
-    title: 'Hello World (Step 3)',
+registerBlockType( 'gutenjpfont/noto', {
+    title: 'Noto',
 
     icon: 'universal-access-alt',
 
