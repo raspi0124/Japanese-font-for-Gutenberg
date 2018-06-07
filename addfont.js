@@ -1,19 +1,22 @@
-const { registerBlockType } = wp.blocks;
-const blockStyle = { backgroundColor: '#900', color: '#fff', padding: '20px' };
 
-registerBlockType( 'gutenberg-boilerplate-esnext/hello-world-step-01', {
-	title: 'Hello World (Step 1)',
 
-	icon: 'universal-access-alt',
+var el = wp.element.createElement,
+    registerBlockType = wp.blocks.registerBlockType,
+    blockStyle = { backgroundColor: '#900', color: '#fff', padding: '20px' };
 
-	category: 'layout',
+registerBlockType( 'gutenberg-boilerplate-es5/hello-world-step-01', {
+    title: 'Hello World (Step 1)',
 
-	edit() {
-		return <p style={ blockStyle }>Hello editor.</p>;
-	},
+    icon: 'universal-access-alt',
 
-	save() {
-		return <p style={ blockStyle }>Hello saved content.</p>;
-	},
+    category: 'layout',
+
+    edit: function() {
+        return el( 'p', { style: blockStyle }, 'Hello editor.' );
+    },
+
+    save: function() {
+        return el( 'p', { style: blockStyle }, 'Hello saved content.' );
+    },
 } );
 
