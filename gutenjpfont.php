@@ -24,7 +24,7 @@ License: GPL2
 function gutenberg_boilerplate_block() {
     wp_register_script(
         'gutenberg-boilerplate-es5-step01',
-        plugins_url( 'step-01/block.js', __FILE__ ),
+        plugins_url( 'addfont.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element' )
     );
 
